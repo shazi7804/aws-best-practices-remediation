@@ -1,0 +1,183 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CostUtilizationMonitoringStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CostUtilizationMonitoringStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CostUtilizationMonitoringStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CostUtilizationMonitoringStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4192f979d2182325ba982f3a8d5379f8f737d4043c0572a8f8b356c0c6289257.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CostUtilizationMonitoringStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CostUtilizationMonitoringStack.assets"
+      ],
+      "metadata": {
+        "/CostUtilizationMonitoringStack/result-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "resultbucketDED12A74"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/automation-service-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "automationservicerole5CDE2A50"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/eip-attached/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "eipattached15100E4E"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/eip-attached-remediation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "eipattachedremediation"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/Service-principalMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceprincipalMap"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CostUtilizationMonitoringStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CostUtilizationMonitoringStack"
+    },
+    "TrustedAdvisorLowUtilizationEC2Instances.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "TrustedAdvisorLowUtilizationEC2Instances.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "TrustedAdvisorLowUtilizationEC2Instances": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "TrustedAdvisorLowUtilizationEC2Instances.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/387c1523c560c698dac5c29b98edf6dbbc3a331e4dcfc41243fcb1ceeeb1cb0d.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "TrustedAdvisorLowUtilizationEC2Instances.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "TrustedAdvisorLowUtilizationEC2Instances.assets"
+      ],
+      "metadata": {
+        "/TrustedAdvisorLowUtilizationEC2Instances/low-utilization-ec2-instance-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lowutilizationec2instancerole933756E4"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/stop-low-utilization-ec2-instance-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "stoplowutilizationec2instancelambdaBF101688"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/low-utilization-ec2-instance-event-rule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lowutilizationec2instanceeventruleA7630927"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/low-utilization-ec2-instance-event-rule/AllowEventRuleTrustedAdvisorLowUtilizationEC2Instancesstoplowutilizationec2instancelambdaB654E6D4": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lowutilizationec2instanceeventruleAllowEventRuleTrustedAdvisorLowUtilizationEC2Instancesstoplowutilizationec2instancelambdaB654E6D40BD4A44F"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/TrustedAdvisorLowUtilizationEC2Instances/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "TrustedAdvisorLowUtilizationEC2Instances"
+    }
+  }
+}

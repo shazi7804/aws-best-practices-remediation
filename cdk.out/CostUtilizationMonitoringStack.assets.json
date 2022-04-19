@@ -1,0 +1,19 @@
+{
+  "version": "16.0.0",
+  "files": {
+    "4192f979d2182325ba982f3a8d5379f8f737d4043c0572a8f8b356c0c6289257": {
+      "source": {
+        "path": "CostUtilizationMonitoringStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "4192f979d2182325ba982f3a8d5379f8f737d4043c0572a8f8b356c0c6289257.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
