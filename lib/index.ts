@@ -1,2 +1,2 @@
-export * from './trustedAdvisor.lowUtilizationEC2Instances';
-export * from './cost-utilization-monitoring-stack';
+export * from './trustedAdvisor';
+export * from './config.managedRule';

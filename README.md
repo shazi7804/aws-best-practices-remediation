@@ -1,14 +1,23 @@
-# Welcome to your CDK TypeScript project
+# AWS Best Practices Remediation
 
-This is a blank project for TypeScript development with CDK.
+There are 5 very popular checks configured
+*  Low Utilization Amazon EC2 Instances
+*  Amazon VPC Flow Logs Enabled
+*  Amazon EBS Snapshot Privated
+*  Amazon IAM User MFA Enabled
+*  ROOT Account MFA Enabled
+*  Amazon RDS 
+*  *Idle Load Balancers (TBD)*
+*  *Underutilized Amazon EBS Volumes (TBD)*
+*  *Amazon RDS Idle DB Instances (TBD)*
+*  *Underutilized Amazon Redshift Clusters (TBD)*
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Architecture Diagram
 
-## Useful commands
+![Architecture](diagram/diagram.jpeg)
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+## Deploy the sample application
+
+```
+$ cdk deploy "*"
+```

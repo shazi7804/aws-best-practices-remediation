@@ -5,10 +5,12 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as events from 'aws-cdk-lib/aws-events';
 import * as targets from 'aws-cdk-lib/aws-events-targets';
 
-export class TrustedAdvisorLowUtilizationEC2Instances extends Stack {
+export class TrustedAdvisorPractices extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Low utilization for Amazon EC2
     const lowUtilizationMonitorInstanceRole = new iam.Role(this, 'low-utilization-ec2-instance-role', {
         roleName: 'AWSLambdaLowUtilizationEC2Instance',
         assumedBy: new iam.ServicePrincipal('lambda'),
@@ -52,6 +54,11 @@ export class TrustedAdvisorLowUtilizationEC2Instances extends Stack {
         },
     });
     lowUtilizationMonitorInstanceRule.addTarget(new targets.LambdaFunction(lowUtilizationMonitorInstanceLambda));
+    // End of Low utilization for Amazon EC2
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    
+
 
 
   }

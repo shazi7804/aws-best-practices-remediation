@@ -9,12 +9,6 @@ export class ConfigManagedRuleStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const bucket = new s3.Bucket(this, 'result-bucket', {
-        bucketName: 'cost-utilization-monitoring-store-' + this.region + '-' + this.account,
-        encryption: s3.BucketEncryption.S3_MANAGED,
-        versioned: true
-    });
-
     const automationRole = new iam.Role(this, 'automation-service-role', {
         roleName: 'AWSSystemManagerAutomationServiceRole',
         assumedBy: new iam.ServicePrincipal('ssm'),
@@ -53,7 +47,32 @@ export class ConfigManagedRuleStack extends Stack {
         retryAttemptSeconds: 60,
     });
 
-    // 
+    // Amazon EBS snapshot should be private only
+    const ebsSnapshotPrivateRestorableConfig = new config.ManagedRule(this, 'ebs-snapshot-public-restorable-check', {
+        identifier: config.ManagedRuleIdentifiers.EBS_SNAPSHOT_PUBLIC_RESTORABLE_CHECK
+    }); 
+
+    // Amazon VPC Flow logs should be enabled
+    const vpcFlowlogsEnabledConfig = new config.ManagedRule(this, 'vpc-flow-logs-enabled', {
+        identifier: config.ManagedRuleIdentifiers.VPC_FLOW_LOGS_ENABLED
+    }); 
+
+    // Amazon IAM users MFA should be enabled
+    const iamUserMFAEnabledConfig = new config.ManagedRule(this, 'iam-user-mfa-enabled', {
+        identifier: config.ManagedRuleIdentifiers.IAM_USER_MFA_ENABLED
+    }); 
+
+    // ROOT Account MFA should be enabled
+    const rootAccountMFAEnabledConfig = new config.ManagedRule(this, 'root-account-mfa-enabled', {
+        identifier: config.ManagedRuleIdentifiers.ROOT_ACCOUNT_MFA_ENABLED
+    }); 
+
+    // Amazon RDS storage should be encrypted
+    const rdsStorageEncryptedEnabledConfig = new config.ManagedRule(this, 'rds-storage-encrypted', {
+        identifier: config.ManagedRuleIdentifiers.RDS_STORAGE_ENCRYPTED
+    }); 
+
+    // For more, please refer to the list of AWS Config Managed Rules: https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
 
   }
 }

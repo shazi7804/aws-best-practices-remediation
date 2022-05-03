@@ -20,7 +20,7 @@ const tagKey ='environment';
 const tagValue ='dev'; // If the tag value matches what's configured, then stop the instance
 const regionSpecification = 'us-east-1'; // Specify a region to restrict the EC2 Stop Instances action to. Use 'all' for all regions
 
-//main function which gets Trusted Advisor data from Cloudwatch event
+// main function which gets Trusted Advisor data from Cloudwatch event
 exports.handler = (event, context, callback) => {
     //extract details from Cloudwatch event
     checkName = event.detail["check-name"];
@@ -34,12 +34,12 @@ exports.handler = (event, context, callback) => {
     callback(null, trustedAdvisorSuccessMessage); //return success
 };
 
-//Sample function which stops EC2 Instances after checking their tags
+// Sample function which stops EC2 Instances after checking their tags
 function stopInstances (instanceId, region) {
     AWS.config.update({region: region});
     var ec2 = new AWS.EC2();
     
-    //get tags for the instances highlighted by Trusted Advisor
+    // get tags for the instances highlighted by Trusted Advisor
     var describeTagsparams = {
         Filters: [
         {
