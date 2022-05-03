@@ -1,6 +1,6 @@
 # AWS Best Practices Remediation
 
-There are 5 very popular checks configured
+There are top 10 very popular checks configured
 *  Low Utilization Amazon EC2 Instances
 *  Amazon VPC Flow Logs Enabled
 *  Amazon EBS Snapshot Privated
